@@ -1,36 +1,73 @@
 import model.TreeNode;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
-public class TreeTraversalTest {
+import static org.junit.jupiter.api.Assertions.*;
 
-    private final TreeTraversal treeTraversal = new TreeTraversal();
+class TreeTraversalTest {
+
+    private final TreeTraversal<Integer> treeTraversal = new TreeTraversal<>();
+    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+    private final PrintStream originalOut = System.out;
 
     @Test
-    void traverse_tree_successfully() {
-        TreeNode<Integer> root = new TreeNode<>(1);
-        TreeNode<Integer> tn1 = new TreeNode<>(3);
-        TreeNode<Integer> tn2 = new TreeNode<>(4);
-        TreeNode<Integer> tn3 = new TreeNode<>(9);
-        TreeNode<Integer> tn4 = new TreeNode<>(8);
-        TreeNode<Integer> tn5 = new TreeNode<>(7);
-        TreeNode<Integer> tn6 = new TreeNode<>(2);
-        TreeNode<Integer> tn7 = new TreeNode<>(11);
+    public void inOrderTraversal() {
+        System.setOut(new PrintStream(outContent));
 
-        root.setLeft(tn1);
-        root.setRight(tn2);
-        tn1.setLeft(tn3);
-        tn1.setRight(tn4);
-        tn2.setLeft(tn5);
-        tn2.setRight(tn6);
-        tn6.setRight(tn7);
+        TreeNode<Integer> root = getCreateBT();
+        treeTraversal.inOrderTraversal(root);
 
-        List<Integer> expected = List.of(1,3,9,8,4,7,2,11);
-        List<Integer> actual = treeTraversal.traverse(root);
+        String expectedOutput = "0641297";
+        assertEquals(expectedOutput, outContent.toString());
 
-        Assertions.assertEquals(expected, actual);
+        System.setOut(originalOut);
+    }
+
+    @Test
+    public void preOrderTraversal() {
+        System.setOut(new PrintStream(outContent));
+
+        TreeNode<Integer> root = getCreateBT();
+        treeTraversal.preOrderTraversal(root);
+
+        String expectedOutput = "2460179";
+        assertEquals(expectedOutput, outContent.toString());
+
+        System.setOut(originalOut);
+    }
+
+    @Test
+    public void postOrderTraversal() {
+        System.setOut(new PrintStream(outContent));
+
+        TreeNode<Integer> root = getCreateBT();
+        treeTraversal.postOrderTraversal(root);
+
+        String expectedOutput = "0614972";
+        assertEquals(expectedOutput, outContent.toString());
+
+        System.setOut(originalOut);
+    }
+
+    private static TreeNode<Integer> getCreateBT() {
+        TreeNode<Integer> root = new TreeNode<>(2);
+        TreeNode<Integer> node1 = new TreeNode<>(4);
+        TreeNode<Integer> node2 = new TreeNode<>(7);
+        TreeNode<Integer> node3 = new TreeNode<>(6);
+        TreeNode<Integer> node4 = new TreeNode<>(1);
+        TreeNode<Integer> node5 = new TreeNode<>(0);
+        TreeNode<Integer> node6 = new TreeNode<>(9);
+
+        root.setLeft(node1);
+        root.setRight(node2);
+        node1.setLeft(node3);
+        node1.setRight(node4);
+        node3.setLeft(node5);
+        node2.setLeft(node6);
+
+        return root;
     }
 
 }

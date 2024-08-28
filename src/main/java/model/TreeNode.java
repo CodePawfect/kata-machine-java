@@ -47,26 +47,4 @@ public class TreeNode<T> {
     public int hashCode() {
         return Objects.hash(value, left, right);
     }
-
-    @Override
-    public String toString() {
-        return toStringHelper(this, 0);
-    }
-
-    private String toStringHelper(TreeNode<T> node, int level) {
-        if (node == null) {
-            return "";
-        }
-
-        StringBuilder sb = new StringBuilder();
-        sb.append("  ".repeat(level));
-        sb.append(node.value).append("\n");
-
-        if (node.left != null || node.right != null) {
-            sb.append(toStringHelper(node.left, level + 1));
-            sb.append(toStringHelper(node.right, level + 1));
-        }
-
-        return sb.toString();
-    }
 }
