@@ -33,8 +33,8 @@ public class BFSGraph {
 
         for(int j = 0; j < adjacencyMatrix.length; j++) {
             if(adjacencyMatrix[vertexIndex][j] == 1) {
-                Graph.Vertex connectedVertrex = graph.getVertex(j);
-                queue.add(connectedVertrex);
+                Graph.Vertex connectedVertex = graph.getVertex(j);
+                queue.add(connectedVertex);
             }
         }
     }
