@@ -1,6 +1,6 @@
 import model.TreeNode;
 
-public class DepthFirstSearch {
+public class DFSTree {
 
     public TreeNode<Integer> search(TreeNode<Integer> node, int value) {
         if(node == null) return null;

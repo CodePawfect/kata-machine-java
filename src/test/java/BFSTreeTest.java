@@ -6,15 +6,15 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
-public class BreadthFirstSearchTest {
+public class BFSTreeTest {
 
-    private final BreadthFirstSearch breadthFirstSearch = new BreadthFirstSearch();
+    private final BFSTree BFSTree = new BFSTree();
 
     @ParameterizedTest
     @MethodSource("generateTestValues")
     void breadthFirstSearch_successfully(TreeNode<Integer> expected, int searchValue) {
         TreeNode<Integer> root = generateTree();
-        TreeNode<Integer> actual = breadthFirstSearch.search(root, searchValue);
+        TreeNode<Integer> actual = BFSTree.search(root, searchValue);
 
         Assertions.assertEquals(expected, actual);
     }

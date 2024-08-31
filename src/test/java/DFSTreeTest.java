@@ -6,16 +6,16 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
-public class DepthFirstSearchTest {
+public class DFSTreeTest {
 
 
-    private final DepthFirstSearch depthFirstSearch = new DepthFirstSearch();
+    private final DFSTree DFSTree = new DFSTree();
 
     @ParameterizedTest
     @MethodSource("generateTestValues")
     void depthFirstSearch_successfully(TreeNode<Integer> expected, int searchValue) {
         TreeNode<Integer> root = generateTree();
-        TreeNode<Integer> actual = depthFirstSearch.search(root, searchValue);
+        TreeNode<Integer> actual = DFSTree.search(root, searchValue);
 
         Assertions.assertEquals(expected, actual);
     }
