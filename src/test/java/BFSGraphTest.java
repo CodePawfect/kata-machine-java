@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 public class BFSGraphTest {
 
-    private final BFSGraph BFSGraph = new BFSGraph();
+    private final BFSGraph bfsGraph = new BFSGraph();
 
     @Test
     void breathFirstSearch_successfully() {
@@ -26,7 +26,7 @@ public class BFSGraphTest {
 
         graph.printAdjacencyMatrix(); // visualize the adjacency matrix
 
-        Graph.Vertex actualVertex = BFSGraph.breadthFirstSearch(graph, needle);
+        Graph.Vertex actualVertex = bfsGraph.breadthFirstSearch(graph, needle);
         Graph.Vertex expectedVertex = new Graph.Vertex(needle);
 
         Assertions.assertEquals(expectedVertex, actualVertex);
