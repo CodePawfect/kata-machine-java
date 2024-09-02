@@ -16,7 +16,7 @@ public class BFSGraph {
 
         while(!queue.isEmpty()) {
            var vertex = queue.poll();
-           addNextVerticiesToQueue(curVertexIndex, queue, graph);
+           addNextVerticesToQueue(curVertexIndex, queue, graph);
 
            if(traversed.contains(vertex)) continue;
            if(vertex.value() == needle) return vertex;
@@ -28,7 +28,7 @@ public class BFSGraph {
         return null;
     }
 
-    private void addNextVerticiesToQueue(int vertexIndex, Queue<Graph.Vertex> queue, Graph graph) {
+    private void addNextVerticesToQueue(int vertexIndex, Queue<Graph.Vertex> queue, Graph graph) {
         int[][] adjacencyMatrix = graph.getAdjacencyMatrix();
 
         for(int j = 0; j < adjacencyMatrix.length; j++) {
