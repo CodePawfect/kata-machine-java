@@ -11,3 +11,7 @@
 
 - **Unit-Tests**: All Algorithms & Datastructures have dedicated tests.
 - **Implement It By Your Own**: Delete the implementation and do it by yourself. You can run the tests to check if your implementations are correct.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.txt) file for details.
