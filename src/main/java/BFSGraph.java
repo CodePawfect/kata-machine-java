@@ -1,4 +1,4 @@
-import model.Graph;
+import datastructure.Graph;
 
 import java.util.LinkedList;
 import java.util.Queue;

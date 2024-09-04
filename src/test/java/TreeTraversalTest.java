@@ -1,4 +1,4 @@
-import model.TreeNode;
+import datastructure.TreeNode;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;

@@ -1,4 +1,4 @@
-package model;
+package datastructure;
 
 public class Graph {
 

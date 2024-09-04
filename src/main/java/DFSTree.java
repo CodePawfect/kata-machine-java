@@ -1,4 +1,4 @@
-import model.TreeNode;
+import datastructure.TreeNode;
 
 public class DFSTree {
 

@@ -1,7 +1,4 @@
-import model.Graph;
-
-import java.util.List;
-import java.util.Set;
+import datastructure.Graph;
 
 public class DFSGraph {
 

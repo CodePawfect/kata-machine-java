@@ -1,4 +1,4 @@
-import model.Graph;
+import datastructure.Graph;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
